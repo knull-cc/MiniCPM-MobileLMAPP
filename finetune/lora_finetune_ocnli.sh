@@ -7,8 +7,8 @@ echo $formatted_time
 deepspeed --include localhost:1 --master_port 19888 finetune.py \
     --model_name_or_path MiniCPM-2B-sft-bf16 \
     --output_dir output/OCNLILoRA/$formatted_time/ \
-    --train_data_path data/train.json \
-    --eval_data_path data/dev.json \
+    --train_data_path data/MobileLMAPP/train.json \
+    --eval_data_path data/MobileLMAPP/dev.json \
     --learning_rate 5e-5 \
     --per_device_train_batch_size 1 \
     --per_device_eval_batch_size 128 \
