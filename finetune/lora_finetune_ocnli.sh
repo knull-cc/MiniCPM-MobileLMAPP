@@ -2,6 +2,7 @@ formatted_time=$(date +"%Y%m%d%H%M%S")
 echo $formatted_time
 
 export CUDA_VISIBLE_DEVICES=0
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
 deepspeed --include localhost:0 --master_port 19888 finetune.py \
     --model_name_or_path /content/MiniCPM-2B-sft-bf16 \
