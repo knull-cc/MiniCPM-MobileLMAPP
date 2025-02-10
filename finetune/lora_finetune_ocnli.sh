@@ -11,10 +11,10 @@ deepspeed --include localhost:0 --master_port 19888 finetune.py \
     --learning_rate 2e-5 \
     --per_device_train_batch_size 4 \
     --per_device_eval_batch_size 4 \
-    --model_max_length 2048 \
+    --model_max_length 1024 \
     --fp16 \
     --use_lora \
-    --gradient_accumulation_steps 8 \
+    --gradient_accumulation_steps 1 \
     --warmup_steps 100 \
     --max_steps 1000 \
     --weight_decay 0.01 \
