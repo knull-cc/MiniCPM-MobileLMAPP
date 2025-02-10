@@ -6,8 +6,8 @@ export CUDA_VISIBLE_DEVICES=0
 deepspeed --include localhost:0 --master_port 19888 finetune.py \
     --model_name_or_path /content/MiniCPM-2B-sft-bf16 \
     --output_dir output/OCNLILoRA/$formatted_time/ \
-    --train_data_path data/MobileLMAPP/train.json \
-    --eval_data_path data/MobileLMAPP/dev.json \
+    --train_data_path data/data_10000/train.json \
+    --eval_data_path data/data_10000/dev.json \
     --learning_rate 2e-5 \
     --per_device_train_batch_size 4 \
     --per_device_eval_batch_size 4 \
